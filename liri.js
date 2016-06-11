@@ -49,7 +49,7 @@ function start(){
         console.log(" ");
         for(var i = 0; i < tweets.length; i++)
         {
-            console.log(tweets[i].text + " " + tweets[i].created_at);
+            console.log(tweets[i].text + " -Posted on: " + tweets[i].created_at);
         }
         console.log(" ");
     }
@@ -71,11 +71,12 @@ function song(){
         for(var i = 0; i < data.tracks.items.length; i ++)
         {
                 console.log(" ");
-            console.log(data.tracks.items[i].artists[0].name);
-            console.log(data.tracks.items[i].name);
-            console.log(data.tracks.items[i].preview_url);
-            console.log(data.tracks.items[i].album.name);
+            console.log("Artist: " + data.tracks.items[i].artists[0].name);
+            console.log("Song Name: " + data.tracks.items[i].name);
+            console.log("Spotify Preview URL: " + data.tracks.items[i].preview_url);
+            console.log("Album Name: " + data.tracks.items[i].album.name);
         }
+        console.log(" ");
     });
 }
   //OMDB API call
@@ -90,14 +91,15 @@ function movie (){
     request(url, function(err, response, body){
         body = JSON.parse(body);
         console.log(" ");
-        console.log(body.Title);
-        console.log(body.Year);
-        console.log(body.imdbRating);
-        console.log(body.Country);
-        console.log(body.Plot);
-        console.log(body.Actors);
-        console.log(body.tomatoRating);
-        console.log(body.tomatoURL);
+        console.log("Titel: " + body.Title);
+        console.log("Year: " + body.Year);
+        console.log("IMDB Raiting: " + body.imdbRating);
+        console.log("Countries: " + body.Country);
+        console.log("Plot: " + body.Plot);
+        console.log("Actors: " + body.Actors);
+        console.log("Rotten Tomato Raiting: " + body.tomatoRating);
+        console.log("Rotten Tomato URL: " + body.tomatoURL);
+        console.log(" ");
     });
 }
 //command from file option
